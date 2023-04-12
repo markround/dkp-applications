@@ -1,0 +1,37 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: elastic
+  namespace: ${workspaceNamespace}
+spec:
+  url: https://helm.elastic.co
+  interval: 10m
+  timeout: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: eck
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: eck-operator
+      sourceRef:
+        kind: HelmRepository
+        name: elastic
+        namespace: ${workspaceNamespace}
+      version: 2.7.0
+  install:
+    remediation:
+      retries: 30
+  interval: 15s
+  releaseName: elastic-operator
+  targetNamespace: ${releaseNamespace}
+  upgrade:
+    remediation:
+      retries: 30
+  valuesFrom:
+    - kind: ConfigMap
+      name: eck-2.7.0-d2iq-defaults
