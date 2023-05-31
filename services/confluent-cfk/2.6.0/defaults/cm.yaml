@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cfk-0.771.13-d2iq-defaults
+  name: cfk-2.6.0-d2iq-defaults
   namespace: ${releaseNamespace}
 data:
   values.yaml: |
