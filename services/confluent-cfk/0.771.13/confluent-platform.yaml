@@ -27,7 +27,7 @@ spec:
     enabled: true
   dependencies:
     zookeeper:
-      endpoint: zookeeper.confluent.svc.cluster.local:2181
+      endpoint: zookeeper.${workspaceNamespace}.svc.cluster.local:2181
 ---
 apiVersion: platform.confluent.io/v1beta1
 kind: Connect
