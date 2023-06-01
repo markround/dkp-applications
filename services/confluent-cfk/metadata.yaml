@@ -1,5 +1,5 @@
 displayName: Confluent CFK Operator
-description: Confluent CFK on Kubernetes
+description: Confluent CFK Operator
 category:
 - data_streaming
 type: catalog
