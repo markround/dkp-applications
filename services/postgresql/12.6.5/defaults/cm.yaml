@@ -7,9 +7,9 @@ metadata:
 data:
   values.yaml: |
     ---
+    auth:
+      database: petclinic
     metrics:
-      auth:
-        database: petclinic
       enabled: true
       serviceMonitor:
         enabled: true
