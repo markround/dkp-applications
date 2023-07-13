@@ -22,7 +22,7 @@ spec:
       chart: postgresql
       sourceRef:
         kind: HelmRepository
-        name: postgresql
+        name: bitnami
         namespace: ${releaseNamespace}
       version: 12.6.5
   install:
