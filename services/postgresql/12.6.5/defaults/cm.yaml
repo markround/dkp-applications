@@ -9,6 +9,8 @@ data:
     ---
     auth:
       database: petclinic
+      user: petclinic
+      password: petclinic
     metrics:
       enabled: true
       serviceMonitor:
