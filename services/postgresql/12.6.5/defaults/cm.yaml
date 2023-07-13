@@ -8,6 +8,8 @@ data:
   values.yaml: |
     ---
     metrics:
+      auth:
+        database: petclinic
       enabled: true
       serviceMonitor:
         enabled: true
