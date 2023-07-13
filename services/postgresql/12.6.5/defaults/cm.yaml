@@ -8,9 +8,9 @@ data:
   values.yaml: |
     ---
     auth:
-      database: petclinic
-      username: petclinic
-      password: petclinic
+      database: demoapp
+      username: demoapp
+      password: demoapp
     metrics:
       enabled: true
       serviceMonitor:
