@@ -7,10 +7,12 @@ metadata:
 data:
   values.yaml: |
     ---
-    auth:
-      database: petclinic
-      user: petclinic
-      password: petclinic
+    global:
+      postgresql:
+        auth:
+          database: petclinic
+          username: petclinic
+          password: petclinic
     metrics:
       enabled: true
       serviceMonitor:
