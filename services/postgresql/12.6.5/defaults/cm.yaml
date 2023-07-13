@@ -17,3 +17,5 @@ data:
       enabled: true
       serviceMonitor:
         enabled: true
+        labels:
+          prometheus.kommander.d2iq.io/select: "true"
