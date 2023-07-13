@@ -1,0 +1,39 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: bitnami
+  namespace: ${releaseNamespace}
+  labels:
+    kommander.d2iq.io/dkp-airgapped: unsupported
+spec:
+  url: "${helmMirrorURL:=https://charts.bitnami.com/bitnami}"
+  interval: 10m
+  timeout: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: postgresql
+      sourceRef:
+        kind: HelmRepository
+        name: postgresql
+        namespace: ${releaseNamespace}
+      version: 12.6.5
+  install:
+    remediation:
+      retries: 30
+  interval: 15s
+  releaseName: postgresql
+  targetNamespace: ${releaseNamespace}
+  upgrade:
+    remediation:
+      retries: 30
+  valuesFrom:
+    - kind: ConfigMap
+      name: postgresql-12.6.5-mdr-defaults
