@@ -7,3 +7,6 @@ metadata:
 data:
   values.yaml: |
     ---
+    metrics:
+      serviceMonitor:
+        enabled: true
