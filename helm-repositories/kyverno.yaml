@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: kyverno.github.io
+  namespace: ${workspaceNamespace}
+spec:
+  url: https://kyverno.github.io/kyverno
+  interval: 10m
+  timeout: 1m

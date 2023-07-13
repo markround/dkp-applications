@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: elastic
+  namespace: ${workspaceNamespace}
+spec:
+  url: https://helm.elastic.co
+  interval: 10m
+  timeout: 1m
