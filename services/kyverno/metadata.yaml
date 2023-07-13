@@ -8,7 +8,6 @@ type: catalog
 allowMultipleInstances: false
 scope:
 - workspace
-- project
 overview: |-
   ## About Kyverno
   Kyverno (Greek for “govern”) is a policy engine designed specifically for Kubernetes. Some of its many features include:
