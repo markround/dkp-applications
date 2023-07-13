@@ -8,5 +8,6 @@ data:
   values.yaml: |
     ---
     metrics:
+      enabled: true
       serviceMonitor:
         enabled: true
