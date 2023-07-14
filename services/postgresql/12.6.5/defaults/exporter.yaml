@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgresql-exporter-4.8.0-mdr-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    serviceMonitor:
+      enabled: true
+      labels:
+        prometheus.kommander.d2iq.io/select: "true"
+    config:
+      datasource: 
+        host: postgresql
+        user: postgres
+        passwordSecret:
+          name: postgresql
+          key: postgres-password
+
+
