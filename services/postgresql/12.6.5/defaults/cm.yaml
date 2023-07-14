@@ -11,12 +11,12 @@ data:
       database: demoapp
       username: demoapp
       password: demoapp
-    metrics:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-        labels:
-          prometheus.kommander.d2iq.io/select: "true"
+    # metrics:
+    #   enabled: true
+    #   serviceMonitor:
+    #     enabled: true
+    #     labels:
+    #       prometheus.kommander.d2iq.io/select: "true"
     primary:
       extendedConfiguration: |
         password_encryption = md5
