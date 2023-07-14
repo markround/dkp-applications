@@ -20,7 +20,6 @@ data:
 
     env:
       email: admin@example.com
-      password: day2andbeyond
 
     serverDefinitions:
       enabled: true
