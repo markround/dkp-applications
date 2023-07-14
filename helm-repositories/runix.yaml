@@ -1,0 +1,12 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: runix
+  namespace: ${releaseNamespace}
+  labels:
+    kommander.d2iq.io/dkp-airgapped: unsupported
+spec:
+  url: "${helmMirrorURL:=https://helm.runix.net}"
+  interval: 10m
+  timeout: 1m

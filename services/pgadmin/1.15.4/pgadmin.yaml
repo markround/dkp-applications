@@ -1,0 +1,39 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: runix
+  namespace: ${releaseNamespace}
+  labels:
+    kommander.d2iq.io/dkp-airgapped: unsupported
+spec:
+  url: "${helmMirrorURL:=https://helm.runix.net}"
+  interval: 10m
+  timeout: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pgadmin
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: pgadmin4
+      sourceRef:
+        kind: HelmRepository
+        name: runix
+        namespace: ${releaseNamespace}
+      version: 1.15.4
+  install:
+    remediation:
+      retries: 30
+  interval: 15s
+  releaseName: pgadmin
+  targetNamespace: ${releaseNamespace}
+  upgrade:
+    remediation:
+      retries: 30
+  valuesFrom:
+    - kind: ConfigMap
+      name: pgadmin-1.15.4-mdr-defaults
