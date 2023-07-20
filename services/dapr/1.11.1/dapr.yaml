@@ -1,0 +1,37 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: dapr
+  namespace: ${workspaceNamespace}
+spec:
+  url: https://dapr.github.io/helm-charts/
+  interval: 10m
+  timeout: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: dapr
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: dapr
+      sourceRef:
+        kind: HelmRepository
+        name: dapr
+        namespace: ${workspaceNamespace}
+      version: 1.11.1
+  install:
+    remediation:
+      retries: 30
+  interval: 15s
+  releaseName: dapr
+  targetNamespace: ${releaseNamespace}
+  upgrade:
+    remediation:
+      retries: 30
+  valuesFrom:
+    - kind: ConfigMap
+      name: dapr-1.11.1-mdr-defaults
