@@ -7,7 +7,10 @@ metadata:
   labels:
     kommander.d2iq.io/dkp-airgapped: unsupported
 spec:
-  url: "${helmMirrorURL:=https://helm.runix.net}"
+  # url: "${helmMirrorURL:=https://helm.runix.net}"
+  # secretRef:
+  #   name: tls-root-ca 
+  url: "https://helm.runix.net"
   interval: 10m
   timeout: 1m
 ---
