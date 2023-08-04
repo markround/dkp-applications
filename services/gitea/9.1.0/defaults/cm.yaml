@@ -9,7 +9,9 @@ data:
     ---
     ingress:
       enabled: true
-      className: traefik
+      annotations:
+        traefik.ingress.kubernetes.io/router.tls: "true"
+      className: kommander-traefik
       hosts:
       - host: gitea.workload.dkp.lab.mark.eek
         paths:
