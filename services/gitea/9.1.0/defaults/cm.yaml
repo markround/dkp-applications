@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitea-9.1.0-mdr-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    ingress:
+      enabled: true
+      className: traefik
+      hosts:
+      - host: gitea.workload.dkp.lab.mark.eek
+        paths:
+        - path: /
+          pathType: Prefix
+    gitea:
+      config:
+        server:
+          ROOT_URL: "https://gitea.workload.dkp.lab.mark.eek"
