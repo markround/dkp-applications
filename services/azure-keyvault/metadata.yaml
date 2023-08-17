@@ -1,0 +1,20 @@
+displayName: Azure Keyvault Provider
+description: Secrets Store CSI Driver and the Azure Keyvault Provider
+category:
+- security
+type: catalog
+allowMultipleInstances: false
+scope:
+- workspace
+overview: |-
+  ## Enhance data protection and compliance
+  Secure key management is essential to protect data in the cloud. Use Azure Key Vault to encrypt keys and small secrets like passwords that use keys stored in hardware security modules (HSMs). For more assurance, import or generate keys in HSMs, and Microsoft processes your keys in FIPS validated HSMs (hardware and firmware) - FIPS 140-2 Level 2 for vaults and FIPS 140-2 Level 3 for HSM pools. With Key Vault, Microsoft doesn’t see or extract your keys. Monitor and audit your key use with Azure logging—pipe logs into Azure HDInsight or your security information and event management (SIEM) solution for more analysis and threat detection.
+
+
+  ## All of the control, none of the work
+  Use Key Vault and you don’t need to provision, configure, patch, and maintain HSMs and key management software. Provision new vaults and keys (or import keys from your own HSMs) in minutes and centrally manage keys, secrets, and policies. You keep control over your keys—simply grant permission for your own and partner applications to use them as needed. Applications never have direct access to keys. Developers manage keys used for Dev/Test and seamlessly migrate to production the keys that are managed by security operations. Simplify and automate tasks related to SSL/TLS certificates—Key Vault enables you to enroll and automatically renew certificates from supported public Certificate Authorities.
+
+
+  ## Boost performance and achieve global scale
+  Improve performance and reduce the latency of your cloud applications by storing cryptographic keys in the cloud, instead of on-premises. Key Vault quickly scales to meet the cryptographic needs of your cloud applications and match peak demand, without the cost of deploying dedicated HSMs. Achieve global redundancy by provisioning vaults in Azure global datacenters—keep a copy in your own HSMs for more durability.
+icon: PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNzEgODEiIGZpbGw9IiNmZmYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjx1c2UgeGxpbms6aHJlZj0iI0EiIHg9Ii41IiB5PSIuNSIvPjxzeW1ib2wgaWQ9IkEiIG92ZXJmbG93PSJ2aXNpYmxlIj48cGF0aCBkPSJNNzAgNDQuMjQ4YzAtMTEuNzAzLTUuNDY5LTIxLjk2NC0xMy43NS0yOC41Mzd2MS4xMjJjMCAzLjUyNy0uOTM4IDYuODk0LTIuMzQ0IDkuNzc5YTI2LjQ0IDI2LjQ0IDAgMCAxIDYuNTYzIDE3LjQ3NWMwIDE0LjQzLTExLjQwNiAyNi4xMzMtMjUuNDY5IDI2LjEzM1M5LjUzMSA1OC41MTcgOS41MzEgNDQuMDg4YzAtNy4yMTUgMi44MTMtMTMuNjI3IDcuMzQ0LTE4LjQzNy0xLjI1LTIuNzI1LTIuMDMxLTUuNzcxLTIuMDMxLTguOTc4IDAtLjY0MSAwLTEuNDQzLjE1Ni0yLjA4NEM1LjkzOCAyMS4wMDIgMCAzMS45MDQgMCA0NC4wODggMCA2My45NjggMTUuNjI1IDgwIDM1IDgwczM1LTE1Ljg3MiAzNS0zNS43NTJ6TTM1LjQ2OSAwYy04LjkwNiAwLTE2LjA5NCA3LjM3NS0xNi4wOTQgMTYuNTEzIDAgNy41MzUgNC44NDQgMTMuNzg4IDExLjU2MyAxNS44NzJ2MTYuMzUzaC03LjV2OC4zMzdoNy41djYuMDkyaDguOTA2VjMyLjM4NWM2LjcxOS0xLjkyNCAxMS41NjMtOC4zMzcgMTEuNTYzLTE1Ljg3MkM1MS41NjMgNy4zNzUgNDQuMzc1IDAgMzUuNDY5IDB6bTAgOC42NTdjNC4yMTkgMCA3LjY1NiAzLjUyNyA3LjY1NiA3Ljg1NnMtMy40MzggNy44NTYtNy42NTYgNy44NTYtNy42NTYtMy41MjctNy42NTYtNy44NTYgMy40MzgtNy44NTYgNy42NTYtNy44NTZ6IiBmaWxsPSIjMDA3OGQ3IiBzdHJva2U9Im5vbmUiLz48L3N5bWJvbD48L3N2Zz4=

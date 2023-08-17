@@ -1,0 +1,37 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: csi-secrets-store-provider-azure
+  namespace: ${workspaceNamespace}
+spec:
+  url: https://azure.github.io/secrets-store-csi-driver-provider-azure/charts
+  interval: 10m
+  timeout: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: azure-keyvault
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: csi-secrets-store-provider-azure
+      sourceRef:
+        kind: HelmRepository
+        name: csi-secrets-store-provider-azure
+        namespace: ${workspaceNamespace}
+      version: 1.4.4
+  install:
+    remediation:
+      retries: 30
+  interval: 15s
+  releaseName: csi
+  targetNamespace: ${releaseNamespace}
+  upgrade:
+    remediation:
+      retries: 30
+  valuesFrom:
+    - kind: ConfigMap
+      name: azure-keyvault-1.4.4-mdr-defaults
