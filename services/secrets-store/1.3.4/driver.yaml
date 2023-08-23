@@ -34,4 +34,4 @@ spec:
       retries: 30
   valuesFrom:
     - kind: ConfigMap
-      name: azure-keyvault-driver-1.3.4-mdr-defaults
+      name: secrets-store-1.3.4-mdr-defaults
