@@ -9,5 +9,4 @@ data:
     ---
     syncSecret:
       enabled: true
-    enableSecretRotation:
-      enabled: true
+    enableSecretRotation: true
