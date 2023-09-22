@@ -27,7 +27,7 @@ spec:
     remediation:
       retries: 30
   interval: 15s
-  releaseName: csi
+  releaseName: csi-driver
   targetNamespace: kube-system
   upgrade:
     remediation:
