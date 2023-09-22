@@ -13,7 +13,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: azure-keyvault
-  namespace: ${releaseNamespace}
+  namespace: kube-system
 spec:
   chart:
     spec:
