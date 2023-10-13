@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gitlab-7.4.1-mdr-defaults
+  namespace: ${releaseNamespace}
+data:
+  values.yaml: |
+    ---
+    global:
+      hosts:
+        domain: lab.markround.com
+        externalIP: 10.202.21.29
+    certmanager:
+      install: false
+    certmanager-issuer:
+      email: letsencrypt@markround.com
+    postgresql:
+      image:
+        tag: 13.6.0
